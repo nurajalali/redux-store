@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProductCrad = ({ product }) => {
   const { image, title, price, category, id } = product;
@@ -22,6 +23,9 @@ const ProductCrad = ({ product }) => {
           <span className="text-blue-700 font-semibold">price:</span>
           {price}
         </p>
+        <div className="text-center text-emerald-700 font-extrabold hover:text-black">
+          <Link to={`/products/${id}`}>Details</Link>
+        </div>
       </div>
     </div>
   );
