@@ -4,6 +4,7 @@ import Footer from "./components/shared/Footer";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./components/homePage/HomePage";
 import DetailsPage from "./components/detailsPage/DetailsPage";
+import CartPage from "./components/cart/CartPage";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products/:id" element={<DetailsPage />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
       <Footer />
     </div>
