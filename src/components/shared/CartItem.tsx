@@ -1,5 +1,6 @@
 import React from "react";
 import Buttons from "./Buttons";
+import BtnAddToList from "./BtnAddToList";
 
 const CartItem = ({ item }) => {
   return (
@@ -18,6 +19,7 @@ const CartItem = ({ item }) => {
       </div>
       <div className="w-full">
         <Buttons data={item} />
+        <BtnAddToList data={item} />
       </div>
     </div>
   );

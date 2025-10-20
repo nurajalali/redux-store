@@ -11,3 +11,8 @@ export const isInCart = (state, id) => {
   const result = state.cart.find((item) => item.id === id);
   return result;
 };
+
+export const isInList = (state, id) => {
+  const result = state.list.find((item) => item.id === id);
+  return result;
+};

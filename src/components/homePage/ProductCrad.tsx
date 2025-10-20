@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Buttons from "../shared/Buttons";
+import BtnAddToList from "../shared/BtnAddToList";
 
 const ProductCrad = ({ product }) => {
   const { image, title, price, category, id } = product;
@@ -27,6 +28,7 @@ const ProductCrad = ({ product }) => {
         <div className="text-center text-emerald-700 font-extrabold hover:text-black">
           <Link to={`/products/${id}`}>Details</Link>
           <Buttons data={product} />
+          <BtnAddToList data={product} />
         </div>
       </div>
     </div>

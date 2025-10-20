@@ -4,7 +4,7 @@ import { LuFolderHeart } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const Header = () => {
+const Header = ({ open }) => {
   const { count } = useSelector((state) => state.cart);
   return (
     <div className="w-full p-3 bg-blue-950 rounded-lg mt-11">
@@ -20,7 +20,12 @@ const Header = () => {
             {count}
           </span>
         </li>
-        <li className="mx-4 flex items-center justify-center gap-2 cursor-pointer">
+        <li
+          onClick={() => {
+            open((prev) => !prev);
+          }}
+          className="mx-4 flex items-center justify-center gap-2 cursor-pointer"
+        >
           <LuFolderHeart size={25} color="#fff" />
         </li>
       </ul>
