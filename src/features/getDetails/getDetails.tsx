@@ -4,27 +4,15 @@ import {
   type PayloadAction,
 } from "@reduxjs/toolkit";
 
-interface ProductDetails {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  price: number;
-}
+import type { Product, ProductDetailsState } from "../../types/product";
 
-interface ProductsState {
-  productDetails: Partial<ProductDetails>;
-  loading: boolean;
-  error: string | null;
-}
-
-const initialState: ProductsState = {
+const initialState: ProductDetailsState = {
   loading: false,
   productDetails: {},
   error: null,
 };
 
-const fetchProductDetails = createAsyncThunk<ProductDetails, number>(
+const fetchProductDetails = createAsyncThunk<Product, number>(
   "productDetails/fetchProductDetails",
   async (id) => {
     const res = await fetch(`https://fakestoreapi.com/products/${id}`);
@@ -43,7 +31,7 @@ const getDetailesSlice = createSlice({
       })
       .addCase(
         fetchProductDetails.fulfilled,
-        (state, action: PayloadAction<ProductDetails>) => {
+        (state, action: PayloadAction<Product>) => {
           state.loading = false;
           state.productDetails = action.payload;
           state.error = null;

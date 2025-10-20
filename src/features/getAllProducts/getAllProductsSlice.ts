@@ -1,18 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
-interface Product {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  price: number;
-}
-
-interface ProductsState {
-  products: Product[];
-  loading: boolean;
-  error: string;
-}
+import type { ProductsState, Product } from "../../types/product";
 
 const initialState: ProductsState = {
   loading: false,
