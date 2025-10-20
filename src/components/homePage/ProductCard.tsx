@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Buttons from "../shared/Buttons";
 import BtnAddToList from "../shared/BtnAddToList";
 
-const ProductCrad = ({ product }) => {
+const ProductCard = ({ product }) => {
   const { image, title, price, category, id } = product;
 
   return (
@@ -35,4 +35,4 @@ const ProductCrad = ({ product }) => {
   );
 };
 
-export default ProductCrad;
+export default ProductCard;
