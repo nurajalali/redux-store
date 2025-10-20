@@ -11,7 +11,9 @@ const CartPage = () => {
       {cart.length ? (
         <div className="flex items-center justify-center flex-col">
           {cart.map((item) => (
-            <CartItem key={item?.id} item={item} />
+            <div className="w-full px-4 md:px-8">
+              <CartItem key={item?.id} item={item} />
+            </div>
           ))}
         </div>
       ) : (

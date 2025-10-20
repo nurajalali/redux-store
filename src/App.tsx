@@ -12,7 +12,7 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="max-w-7xl mx-auto min-h-screen">
+    <div className="max-w-7xl mx-auto min-h-screen px-2 ">
       {isOpen ? <List open={setIsOpen} /> : null}
       <Header open={setIsOpen} />
       <Routes>

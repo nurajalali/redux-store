@@ -7,8 +7,8 @@ import { useSelector } from "react-redux";
 const Header = ({ open }) => {
   const { count } = useSelector((state) => state.cart);
   return (
-    <div className="w-full p-3 bg-blue-950 rounded-lg mt-11">
-      <ul className="flex items-center">
+    <div className="w-full  bg-blue-950 rounded-lg mt-3.5 px-4 md:px-1 py-3 shadow-md ">
+      <ul className="flex items-cente items-center justify-between md:justify-start md:gap-8 text-white text-sm md:text-base">
         <li className="mx-4">
           <Link to="/">Home</Link>
         </li>
