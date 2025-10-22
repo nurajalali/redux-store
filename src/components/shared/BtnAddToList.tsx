@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addToList, removeFromList } from "../../features/list/ListSlice";
 import toast from "react-hot-toast";
 import { isInList } from "../../functions/functions";
-import type { RootState } from "../../app/store";
+import type { AppDispatch, RootState } from "../../app/store";
 import type { Product } from "../../types/product";
 
 type ButtonsProps = {
@@ -13,7 +13,7 @@ type ButtonsProps = {
 
 const BtnAddToList = ({ data }: ButtonsProps) => {
   const list = useSelector((state: RootState) => state.list);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const addToListHandler = () => {
     dispatch(addToList(data));

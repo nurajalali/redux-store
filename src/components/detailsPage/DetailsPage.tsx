@@ -1,17 +1,16 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchProductDetails } from "../../features/getDetails/getDetails";
+import { fetchProductDetails } from "../../features/getDetails/getDetailsSlice";
 import { useParams } from "react-router-dom";
 import Loading from "../shared/Loading";
 import DetailsCard from "./DetailsCard";
-import type { RootState } from "../../app/store";
-import type { ProductDetailsState } from "../../types/product";
+import type { AppDispatch, RootState } from "../../app/store";
 
 const DetailsPage = () => {
   const { loading, productDetails, error } = useSelector(
-    (state: RootState) => state?.productDetails as ProductDetailsState
+    (state: RootState) => state.productDetails
   );
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const { id } = useParams<{ id: string }>();
 
   useEffect(() => {

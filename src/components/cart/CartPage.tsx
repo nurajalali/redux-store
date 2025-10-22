@@ -1,17 +1,19 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItem from "../shared/CartItem";
+import type { RootState } from "../../app/store";
+import type { Product } from "../../types/product";
 
 const CartPage = () => {
-  const { cart } = useSelector((state) => state.cart);
+  const { cart } = useSelector((state: RootState) => state.cart);
 
   return (
     <div className="w-full min-h-screen">
       {cart.length ? (
         <div className="flex items-center justify-center flex-col">
-          {cart.map((item) => (
+          {cart.map((item: Product) => (
             <div className="w-full px-4 md:px-8">
-              <CartItem key={item?.id} item={item} />
+              <CartItem key={item.id} item={item} />
             </div>
           ))}
         </div>

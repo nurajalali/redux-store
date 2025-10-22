@@ -1,4 +1,8 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import {
+  createSlice,
+  createAsyncThunk,
+  type PayloadAction,
+} from "@reduxjs/toolkit";
 import type { ProductsState, Product } from "../../types/product";
 
 const initialState: ProductsState = {
@@ -8,11 +12,11 @@ const initialState: ProductsState = {
 };
 
 const fetchProducts = createAsyncThunk<Product[]>(
-  "products / fetchProducts",
-  () => {
-    return fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => data);
+  "products/fetchProducts",
+  async () => {
+    const res = await fetch("https://fakestoreapi.com/products");
+    const data: Product[] = await res.json();
+    return data;
   }
 );
 
@@ -35,7 +39,7 @@ const productsSlice = createSlice({
       .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;
         state.products = [];
-        state.error = action.error.message;
+        state.error = action.error.message || "Something went wrong";
       });
   },
 });

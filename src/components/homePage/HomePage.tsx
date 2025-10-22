@@ -43,7 +43,7 @@ const HomePage = () => {
       >
         {products.length > 0 &&
           products.map((product: Product) => (
-            <ProductCard key={product?.id} product={product} />
+            <ProductCard key={product.id} product={product} />
           ))}
       </div>
     </div>

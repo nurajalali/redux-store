@@ -1,4 +1,4 @@
-import type { RootState } from "../../app/store";
+import type { AppDispatch, RootState } from "../../app/store";
 import {
   addToCart,
   removeToCart,
@@ -15,7 +15,7 @@ type ButtonsProps = {
 };
 const Buttons = ({ data }: ButtonsProps) => {
   const cart = useSelector((state: RootState) => state.cart);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const removeToCartHandler = () => {
     dispatch(removeToCart(data));

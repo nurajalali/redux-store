@@ -40,7 +40,7 @@ const getDetailesSlice = createSlice({
       .addCase(fetchProductDetails.rejected, (state, action) => {
         state.loading = false;
         state.productDetails = {};
-        state.error = action.error.message;
+        state.error = action.error.message || "Something went wrong";
       });
   },
 });

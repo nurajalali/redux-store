@@ -1,7 +1,7 @@
 import type { Product } from "../../types/product";
 
 type DetailsCardProps = {
-  details: Product;
+  details: Partial<Product>;
 };
 
 const DetailsCard = ({ details }: DetailsCardProps) => {
@@ -23,7 +23,7 @@ const DetailsCard = ({ details }: DetailsCardProps) => {
         </p>
       </div>
       <div className="order-1 md:order-2 w-full md:w-[35%] rounded-xl overflow-hidden flex items-center">
-        <img src={details?.image} className="w-full h-96 rounded-2xl" />
+        <img src={details.image} className="w-full h-96 rounded-2xl" />
       </div>
     </div>
   );
