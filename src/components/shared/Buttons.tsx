@@ -8,8 +8,12 @@ import {
 import { counter, isInCart } from "../../functions/functions";
 import { FaTrash, FaPlus, FaMinus } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
+import type { Product } from "../../types/product";
 
-const Buttons = ({ data }) => {
+type ButtonsProps = {
+  data: Product;
+};
+const Buttons = ({ data }: ButtonsProps) => {
   const cart = useSelector((state: RootState) => state.cart);
   const dispatch = useDispatch();
 

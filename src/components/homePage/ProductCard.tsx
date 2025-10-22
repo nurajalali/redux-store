@@ -12,7 +12,7 @@ const ProductCard = ({ product }: ProductsProps) => {
 
   return (
     <div className="rounded-xl bg-gray-300 shadow-lg flex flex-col justify-between overflow-hidden">
-      <img className="w-full h-64" src={image} />
+      <img className="w-full h-64" src={image} alt={title} />
       <div className="my-2 px-3">
         <p className="mt-2">{title}</p>
         <p

@@ -5,8 +5,13 @@ import { addToList, removeFromList } from "../../features/list/ListSlice";
 import toast from "react-hot-toast";
 import { isInList } from "../../functions/functions";
 import type { RootState } from "../../app/store";
+import type { Product } from "../../types/product";
 
-const BtnAddToList = ({ data }) => {
+type ButtonsProps = {
+  data: Product;
+};
+
+const BtnAddToList = ({ data }: ButtonsProps) => {
   const list = useSelector((state: RootState) => state.list);
   const dispatch = useDispatch();
 

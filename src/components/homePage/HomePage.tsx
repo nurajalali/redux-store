@@ -4,6 +4,7 @@ import { fetchProducts } from "../../features/getAllProducts/getAllProductsSlice
 import Loading from "../shared/Loading";
 import type { AppDispatch, RootState } from "../../app/store";
 import ProductCard from "./ProductCard";
+import type { Product } from "../../types/product";
 
 const HomePage = () => {
   const { loading, products, error } = useSelector(
@@ -41,7 +42,7 @@ const HomePage = () => {
             lg:grid-cols-4  gap-6 pt-6 "
       >
         {products.length > 0 &&
-          products.map((product) => (
+          products.map((product: Product) => (
             <ProductCard key={product?.id} product={product} />
           ))}
       </div>
