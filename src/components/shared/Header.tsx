@@ -1,11 +1,11 @@
-import React from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { LuFolderHeart } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import type { RootState } from "../../app/store";
 
 const Header = ({ open }) => {
-  const { count } = useSelector((state) => state.cart);
+  const { count } = useSelector((state: RootState) => state.cart);
   return (
     <div className="w-full  bg-blue-950 rounded-lg mt-3.5 px-4 md:px-1 py-3 shadow-md ">
       <ul className="flex items-cente items-center justify-between md:justify-start md:gap-8 text-white text-sm md:text-base">

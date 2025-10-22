@@ -1,8 +1,12 @@
-import React from "react";
 import Buttons from "./Buttons";
 import BtnAddToList from "./BtnAddToList";
+import type { Product } from "../../types/product";
 
-const CartItem = ({ item }) => {
+type CartItemProps = {
+  item: Product;
+};
+
+const CartItem = ({ item }: CartItemProps) => {
   return (
     <div className="w-full flex flex-col md:flex-row items-center justify-between border border-blue-500 rounded-xl my-4 p-5 gap-5 px-4 md:px-8">
       <img

@@ -1,9 +1,13 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import Buttons from "../shared/Buttons";
 import BtnAddToList from "../shared/BtnAddToList";
+import type { Product } from "../../types/product";
 
-const ProductCard = ({ product }) => {
+type ProductsProps = {
+  product: Product;
+};
+
+const ProductCard = ({ product }: ProductsProps) => {
   const { image, title, price, category, id } = product;
 
   return (

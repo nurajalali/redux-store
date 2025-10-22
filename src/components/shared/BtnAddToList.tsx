@@ -1,13 +1,13 @@
-import React from "react";
 import { CiHeart } from "react-icons/ci";
 import { IoHeart } from "react-icons/io5";
 import { useSelector, useDispatch } from "react-redux";
 import { addToList, removeFromList } from "../../features/list/ListSlice";
 import toast from "react-hot-toast";
 import { isInList } from "../../functions/functions";
+import type { RootState } from "../../app/store";
 
 const BtnAddToList = ({ data }) => {
-  const list = useSelector((state) => state.list);
+  const list = useSelector((state: RootState) => state.list);
   const dispatch = useDispatch();
 
   const addToListHandler = () => {

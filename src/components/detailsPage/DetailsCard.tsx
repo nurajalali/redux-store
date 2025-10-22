@@ -1,6 +1,10 @@
-import React from "react";
+import type { Product } from "../../types/product";
 
-const DetailsCard = ({ details }) => {
+type DetailsCardProps = {
+  details: Product;
+};
+
+const DetailsCard = ({ details }: DetailsCardProps) => {
   return (
     <div className="w-full flex flex-col md:flex-row justify-between gap-5">
       <div className="order-2 md:order-1 w-full md:w-[65%] border border-blue-700 rounded-xl p-10 ">

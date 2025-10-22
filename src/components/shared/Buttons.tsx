@@ -1,4 +1,4 @@
-import React from "react";
+import type { RootState } from "../../app/store";
 import {
   addToCart,
   removeToCart,
@@ -10,7 +10,7 @@ import { FaTrash, FaPlus, FaMinus } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 
 const Buttons = ({ data }) => {
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state: RootState) => state.cart);
   const dispatch = useDispatch();
 
   const removeToCartHandler = () => {
